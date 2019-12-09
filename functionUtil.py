@@ -18,7 +18,7 @@ def CEC_1(solution=None, problem_size=None, shift=0):
     f(x*) = 100
     """
     res = 0
-    constant = np.power(10, 6)
+    constant = 10**6
     dim = len(solution)
     for i in range(dim):
         res += np.power(constant, i/dim) * np.square((solution[i] - shift))
@@ -474,31 +474,31 @@ def islo_multi_F16(solution, problem_size=None, shift_num=1):
 
 
 # Hybrid
-def islo_hybrid_F17(solution, problem_size=None, shift_num=1):
+def islo_hybrid_F17(solution, problem_size=None, shift_num=0):
     # CEC 2014 F17
     x = solution - shift_num
     return C17(x)
 
 
-def islo_hybrid_F18(solution, problem_size=None, shift_num=1):
+def islo_hybrid_F18(solution, problem_size=None, shift_num=0):
     # CEC 2014 F18
     x = solution - shift_num
     return C18(x)
 
 
-def islo_hybrid_F19(solution, problem_size=None, shift_num=1):
+def islo_hybrid_F19(solution, problem_size=None, shift_num=0):
     # CEC 2014 F19
     x = solution - shift_num
     return C19(x)
 
 
-def islo_hybrid_F20(solution, problem_size=None, shift_num=1):
+def islo_hybrid_F20(solution, problem_size=None, shift_num=0):
     # CEC 2014 F20
     x = solution - shift_num
     return C20(x)
 
 
-def islo_hybrid_F21(solution, problem_size=None, shift_num=1):
+def islo_hybrid_F21(solution, problem_size=None, shift_num=0):
     # CEC 2015 F6
     x = solution - shift_num
     random_indices = np.arange(len(x))
@@ -514,7 +514,7 @@ def islo_hybrid_F21(solution, problem_size=None, shift_num=1):
     return slno_f9(x1) + slno_f8(x2) + slno_f1(x3) + 600
 
 
-def islo_hybrid_F22(solution, problem_size=None, shift_num=1):
+def islo_hybrid_F22(solution, problem_size=None, shift_num=0):
     # CEC 2015 F7
     x = solution - shift_num
     random_indices = np.arange(len(x))
@@ -532,7 +532,7 @@ def islo_hybrid_F22(solution, problem_size=None, shift_num=1):
     return slno_f7(x1) + slno_f6(x2) + slno_f4(x3) + slno_f14(x4) + 700
 
 
-def islo_hybrid_F23(solution, problem_size=None, shift_num=1):
+def islo_hybrid_F23(solution, problem_size=None, shift_num=0):
     # CEC 2015 F8
     x = solution - shift_num
     random_indices = np.arange(len(x))
@@ -555,7 +555,7 @@ def islo_hybrid_F23(solution, problem_size=None, shift_num=1):
 # Composition
 def islo_compos_F24(solution, problem_size=None, shift_num=1):
     # CEC 2015 F9
-    shift_arr = [1, 2, 3]
+    shift_arr = np.zeros(3)
     sigma = [20, 20, 20]
     lamda = [1, 1, 1]
     bias = [900, 1000, 1100]
@@ -574,7 +574,7 @@ def islo_compos_F24(solution, problem_size=None, shift_num=1):
 
 def islo_compos_F25(solution, problem_size=None, shift_num=1):
     # CEC 2015 F10
-    shift_arr = [1, 2, 3]
+    shift_arr = np.zeros(3)
     sigma = [10, 30, 50]
     lamda = [1, 1, 1]
     bias = [1000, 1100, 1200]
@@ -593,7 +593,7 @@ def islo_compos_F25(solution, problem_size=None, shift_num=1):
 
 def islo_compos_F26(solution, problem_size=None, shift_num=1):
     # CEC 2015 F11
-    shift_arr = [1, 2, 3, 4, 5]
+    shift_arr = np.zeros(5)
     sigma = [10, 10, 10, 20, 20]
     lamda = [10, 10, 2.5, 25,1e-6]
     bias = [1100, 1200, 1300, 1400, 1500]
@@ -612,7 +612,7 @@ def islo_compos_F26(solution, problem_size=None, shift_num=1):
 
 def islo_compos_F27(solution, problem_size=None, shift_num=1):
     # CEC 2015 F12
-    shift_arr = [1, 2, 3, 4, 5]
+    shift_arr = np.zeros(5)
     sigma = [10, 10, 20, 20, 30]
     lamda = [0.25, 1, 1e-7, 10, 10]
     bias = [1200, 1300, 1400, 1500, 1600]
@@ -631,7 +631,7 @@ def islo_compos_F27(solution, problem_size=None, shift_num=1):
 
 def islo_compos_F28(solution, problem_size=None, shift_num=1):
     # CEC 2015 F13
-    shift_arr = [1, 2, 3, 4, 5]
+    shift_arr = np.zeros(5)
     sigma = [10, 10, 10, 20, 20]
     lamda = [1, 10, 1, 25, 10]
     bias = [1300, 1400, 1500, 1600, 1700]
@@ -650,7 +650,7 @@ def islo_compos_F28(solution, problem_size=None, shift_num=1):
 
 def islo_compos_F29(solution, problem_size=None, shift_num=1):
     # CEC 2015 F14
-    shift_arr = [1, 2, 3, 4, 5, 6, 7]
+    shift_arr = np.zeros(7)
     sigma = [10, 20, 30, 40, 50, 50, 50]
     lamda = [10,2.5, 2.5, 10,1e-6,1e-6, 10]
     bias = [1400, 1500, 1600, 1700, 1800, 1900, 2000]
@@ -669,7 +669,7 @@ def islo_compos_F29(solution, problem_size=None, shift_num=1):
 
 def islo_compos_F30(solution, problem_size=None, shift_num=1):
     # CEC 2015 F15
-    shift_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    shift_arr = np.zeros(10)
     sigma = [10, 10, 20, 20, 30, 30, 40, 40, 50, 50]
     lamda = [0.1,2.5e-1, 0.1, 2.5e-2, 1e-3, 0.1, 1e-5, 10, 2.5e-2, 1e-3]
     bias = [1500, 1600, 1600, 1700, 1700, 1800, 1800, 1900, 1900, 2000]
